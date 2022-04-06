@@ -9,10 +9,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
-import static org.springframework.data.jpa.domain.Specification.where;
-
 @AllArgsConstructor
 @Service
 public class ProdutoService {
@@ -38,7 +34,7 @@ public class ProdutoService {
         //valida descricao, sanitizacao... retira HTML, scripts de campos texto. pode ser na view.
 //        Optional<FabricanteEntity> fabricanteEntity = fabricanteRepository.findById(produtoRequest.getIdFabricante());
         //TODO implementar exception para o sistema
-        ProdutoEntity produtoEntity = new ProdutoEntity(ProdutoDTO);
+        ProdutoEntity produtoEntity = new ProdutoEntity(produtoDTO);
 
         return produtoRepository.save(produtoEntity);
     }

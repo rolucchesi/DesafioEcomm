@@ -82,7 +82,8 @@ public class ProdutoEntity {
         this.valor = produtoDTO.getValor();
         this.codigoBarra = produtoDTO.getCodigoBarra();
         this.status = ProdutoStatus.ATIVO;
-        this.peso = produtoDTO.getPesoUnidadeMedida();
+        this.peso = produtoDTO.getPeso();
+        this.pesoUnidadeMedida = produtoDTO.getPesoUnidadeMedida();
         this.dataCriacao = ZonedDateTime.now();
         this.dataAtualizacao = ZonedDateTime.now();
     }

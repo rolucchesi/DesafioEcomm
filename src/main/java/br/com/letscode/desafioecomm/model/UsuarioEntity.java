@@ -12,7 +12,7 @@ import java.util.UUID;
 public class UsuarioEntity {
 
     @Id
-    @Setter(AccessLevel.NONE)
+//    @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
