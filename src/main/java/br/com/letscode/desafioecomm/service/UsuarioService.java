@@ -50,7 +50,12 @@ public class UsuarioService implements UserDetailsService {
         return usuario;
     }
 
-    public UsuarioEntity alterarSenhaUsuario(String nome, UsuarioDTO usuarioDTO) {
+    public UsuarioEntity alterarSenhaUsuario(String nome, UsuarioDTO usuarioDTO, String nomeAuth) {
+
+        if(!nome.equals(nomeAuth)) {
+            throw new RuntimeException("Não é possível alterar a senha de outro usuário!");
+        }
+
         UsuarioEntity usuario = usuarioRepository.findByNome(nome)
                 .orElseThrow(() -> {
                     throw new RuntimeException("Não existe um usuário com este nome!");
