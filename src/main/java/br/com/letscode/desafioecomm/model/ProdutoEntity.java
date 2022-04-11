@@ -59,7 +59,6 @@ public class ProdutoEntity {
 
     public  ProdutoEntity(String nome, String descricao,
                          BigDecimal valor, String codigoBarra,
-//                         FabricanteEntity fabricante,
                          Integer peso,
                          String pesoUnidadeMedida) {
         this.codigo = UUID.randomUUID();
@@ -68,7 +67,6 @@ public class ProdutoEntity {
         this.valor = valor;
         this.codigoBarra = codigoBarra;
         this.status = ProdutoStatus.ATIVO;
-//        this.fabricante = fabricante;
         this.peso = peso;
         this.pesoUnidadeMedida = pesoUnidadeMedida;
         this.dataCriacao = ZonedDateTime.now();
