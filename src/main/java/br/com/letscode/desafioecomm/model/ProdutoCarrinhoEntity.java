@@ -12,7 +12,7 @@ public class ProdutoCarrinhoEntity {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "PRODUTO")
+    @JoinColumn(name = "PRODUTO_ID")
     private ProdutoEntity produto;
 
     @Column(name = "QUANTIDADE")

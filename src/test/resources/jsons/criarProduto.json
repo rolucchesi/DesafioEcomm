@@ -1,0 +1,9 @@
+{
+  "nome": "Bola",
+  "descricao": "abcd",
+  "valor": 50.0,
+  "codigoBarra": "1234",
+  "status": "ATIVO",
+  "peso": 1,
+  "pesoUnidadeMedida": "kg"
+}

@@ -40,10 +40,6 @@ public class ProdutoEntity {
     @Column(name = "STATUS")
     private ProdutoStatus status;
 
-//    @ManyToOne
-//    @JoinColumn(name = "ID_FABRICANTE")
-//    private FabricanteEntity fabricante;
-
     @Column(name = "PESO")
     private Integer peso;
 
@@ -86,4 +82,11 @@ public class ProdutoEntity {
         this.dataAtualizacao = ZonedDateTime.now();
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

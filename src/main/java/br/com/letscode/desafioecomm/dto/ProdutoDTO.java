@@ -19,8 +19,6 @@ public class ProdutoDTO {
 
     private String codigoBarra;
 
-//    private Long idFabricante;
-
     private Integer peso;
 
     private String pesoUnidadeMedida;

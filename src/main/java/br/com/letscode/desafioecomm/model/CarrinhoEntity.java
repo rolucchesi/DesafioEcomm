@@ -24,7 +24,7 @@ public class CarrinhoEntity {
     @Column(name = "DATA_ATUALIZACAO")
     private ZonedDateTime dataAtualizacao;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ProdutoCarrinhoEntity> produtos;
 
     public CarrinhoEntity(final UsuarioEntity usuario) {

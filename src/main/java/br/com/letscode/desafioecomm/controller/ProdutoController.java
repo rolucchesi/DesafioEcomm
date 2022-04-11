@@ -10,26 +10,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
-@RequestMapping("produtos")
+@RequestMapping("/produtos")
 @RestController
 public class ProdutoController {
     private ProdutoService produtoService;
 
     @GetMapping()
-    public ResponseEntity<Page<ProdutoEntity>> listarProdutos(
-            @RequestParam(name = "offset") Integer offset,
-            @RequestParam(name = "limit") Integer limit
-//            @RequestParam(name = "nome", required = false) String nome,
-//            @RequestParam(name = "valor_maximo", required = false) BigDecimal valorMaximo
-    ){
+    public ResponseEntity<Page<ProdutoEntity>> listarProdutos(@RequestParam(name = "offset") Integer offset,
+                                                              @RequestParam(name = "limit") Integer limit){
         Page<ProdutoEntity> produtos = produtoService.buscarTodos(offset, limit);
         return ResponseEntity.ok(produtos);
     }
 
     @PostMapping
-    public ResponseEntity<ProdutoEntity> criarProduto(
-            @RequestBody ProdutoDTO request
-    ){
+    public ResponseEntity<ProdutoEntity> criarProduto(@RequestBody ProdutoDTO request){
         ProdutoEntity produto = produtoService.criarProduto(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }

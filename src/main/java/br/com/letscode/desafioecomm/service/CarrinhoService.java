@@ -41,11 +41,6 @@ public class CarrinhoService {
     }
 
     public CarrinhoEntity adicionarProdutoAoCarrinho(final String nome, final ProdutoCarrinhoDto dto) {
-        //TODO adicionar verificação do usuário?
-//        if(!authNome.equals(nome)) {
-//            throw new RuntimeException("Você não pode adicionar um produto em um carrinho de outra pessoa!");
-//        }
-
         UsuarioEntity usuario = usuarioRepository.findByNome(nome).orElseThrow(() -> {
             throw new RuntimeException("Não existe um usuário com este nome!");
         });
@@ -54,7 +49,7 @@ public class CarrinhoService {
 
         ProdutoEntity produto = produtoRepository.findById(dto.getIdProduto()).orElseThrow(() -> {
             throw new RuntimeException("Não existe produto com este ID!");
-        });//TODO buscar o produto pelo ID é a melhor forma?
+        });
 
         carrinho.getProdutos().add(new ProdutoCarrinhoEntity(produto, dto.getQuantidade()));
 
@@ -62,8 +57,6 @@ public class CarrinhoService {
     }
 
     public void removerProdutoDoCarrinho(final String nome, final Long idProduto) {
-        //TODO adicionar verificação do usuário?
-
         UsuarioEntity usuario = usuarioRepository.findByNome(nome).orElseThrow(() -> {
             throw new RuntimeException("Não existe um usuário com este nome!");
         });
@@ -78,7 +71,7 @@ public class CarrinhoService {
 
         List<ProdutoCarrinhoEntity> novaLista = carrinho.getProdutos()
                 .stream()
-                .filter(produtos -> !produtos.getId().equals(idProduto))
+                .filter(produtos -> !produtos.getProduto().getId().equals(idProduto))
                 .collect(Collectors.toList());
 
         carrinho.setProdutos(novaLista);
