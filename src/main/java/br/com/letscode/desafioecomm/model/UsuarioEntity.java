@@ -1,8 +1,8 @@
 package br.com.letscode.desafioecomm.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity(name = "USUARIO")
@@ -19,7 +19,7 @@ public class UsuarioEntity {
     private String senha;
 
     @Column(name = "DATA_Nascimento")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(name = "DATA_CRIACAO")
     private ZonedDateTime dataCriacao;
@@ -35,7 +35,7 @@ public class UsuarioEntity {
 
     public UsuarioEntity(String nome,
                          String senha,
-                         Date dataNascimento) {
+                         LocalDate dataNascimento) {
         this.nome = nome;
         this.senha = senha;
         this.dataNascimento = dataNascimento;
@@ -67,11 +67,11 @@ public class UsuarioEntity {
         this.senha = senha;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

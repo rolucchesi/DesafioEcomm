@@ -26,10 +26,8 @@ public class ProdutoService {
 
     public ProdutoEntity buscarPorId(Long id){
         return produtoRepository.findById(id).orElseThrow(() -> {
-            throw new RuntimeException("Não existe um produto com este id!");
+            throw new RuntimeException("Não existe produto com este ID!");
         });
-
-//        return produto;
     }
 
     public ProdutoEntity buscarPorCodigoBarra(String codigoBarra){
@@ -45,7 +43,6 @@ public class ProdutoService {
     public void deletarProduto(Long id){
         ProdutoEntity produtoEntity = buscarPorId(id);
         produtoRepository.delete(produtoEntity);
-//        return null;
     }
 
     public ProdutoEntity editarProduto(Long id, ProdutoDTO produtoDTO){

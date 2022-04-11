@@ -1,15 +1,15 @@
 package br.com.letscode.desafioecomm.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class UsuarioDTO {
 
     private String nome;
     private String senha;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
-    public UsuarioDTO(String nome, String senha, Date dataNascimento) {
+    public UsuarioDTO(String nome, String senha, LocalDate dataNascimento) {
         this.nome = nome;
         this.senha = senha;
         this.dataNascimento = dataNascimento;
@@ -31,11 +31,11 @@ public class UsuarioDTO {
         this.senha = senha;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
